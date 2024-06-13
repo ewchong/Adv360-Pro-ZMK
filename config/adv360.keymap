@@ -39,7 +39,9 @@
                 <&macro_press>,
                 <&kp LS(LCMD)>,
                 <&macro_tap>,
-                <&kp SPACE>;
+                <&kp SPACE>,
+                <&macro_release>,
+                <&kp LS(LEFT_COMMAND)>;
 
             label = "SHORTCAT";
         };
