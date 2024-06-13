@@ -31,36 +31,6 @@
         };
     };
 
-    macros {
-        win_shrink: win_cw {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LS(H))>;
-            label = "WIN_CW";
-        };
-
-        win_ccw: win_ccw {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LA(K))>;
-            label = "WIN_CCW";
-        };
-
-        win_expand: win_expand {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LA(L))>;
-            label = "WIN_EXPAND";
-        };
-
-        win_cw: win_cw {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LA(J))>;
-            label = "WIN_CW";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
