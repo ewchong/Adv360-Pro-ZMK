@@ -32,10 +32,31 @@
     };
 
     macros {
-        win_cw: win_cw {
+        win_shrink: win_cw {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(LS(H))>;
+            label = "WIN_CW";
+        };
+
+        win_ccw: win_ccw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LA(K))>;
+            label = "WIN_CCW";
+        };
+
+        win_expand: win_expand {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LA(L))>;
+            label = "WIN_EXPAND";
+        };
+
+        win_cw: win_cw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LA(J))>;
             label = "WIN_CW";
         };
     };
@@ -45,21 +66,21 @@
 
         default_layer {
             bindings = <
-&kp EQUAL             &kp N1  &kp N2  &kp N3        &kp N4    &kp N5  &tog 1                                                               &mo 1                  &kp N6  &kp N7    &kp N8         &kp N9    &kp N0    &kp MINUS
-&kp TAB               &kp Q   &kp W   &kp E         &kp R     &kp T   &none                                                                &none                  &kp Y   &kp U     &kp I          &kp O     &kp P     &kp BSLH
-&mt LEFT_CONTROL ESC  &kp A   &kp S   &kp D         &kp F     &kp G   &none        &kp LEFT   &kp RIGHT          &kp UP     &kp DOWN       &none                  &kp H   &kp J     &kp K          &kp L     &kp SEMI  &kp SQT
-&kp LSHFT             &kp Z   &kp X   &kp C         &kp V     &kp B                           &kp DEL            &kp PG_UP                                        &kp N   &kp M     &kp COMMA      &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2                 &mo 3   &none   &kp LEFT_ALT  &kp LCMD          &lt 1 SPACE  &kp ENTER  &kp BACKSPACE      &kp PG_DN  &mt LCTRL ESC  &hm RIGHT_SHIFT SPACE          &kp RCMD  &kp RIGHT_ALT  &kp LBKT  &kp RBKT  &mo 2
+&kp EQUAL             &kp N1  &kp N2  &kp N3        &kp N4    &kp N5  &tog 1                                                                            &mo 1                  &kp N6  &kp N7    &kp N8         &kp N9    &kp N0    &kp MINUS
+&kp TAB               &kp Q   &kp W   &kp E         &kp R     &kp T   &none                                                                             &none                  &kp Y   &kp U     &kp I          &kp O     &kp P     &kp BSLH
+&mt LEFT_CONTROL ESC  &kp A   &kp S   &kp D         &kp F     &kp G   &none        &kp LEFT            &kp RIGHT              &kp UP     &kp DOWN       &none                  &kp H   &kp J     &kp K          &kp L     &kp SEMI  &kp SQT
+&kp LSHFT             &kp Z   &kp X   &kp C         &kp V     &kp B                                    &kp DEL                &kp PG_UP                                        &kp N   &kp M     &kp COMMA      &kp DOT   &kp FSLH  &kp RSHFT
+&mo 2                 &mo 3   &none   &kp LEFT_ALT  &kp LCMD          &lt 1 SPACE  &hm LA(LCMD) ENTER  &kp LA(LS(SPACE))      &kp PG_DN  &mt LCTRL ESC  &hm RIGHT_SHIFT SPACE          &kp RCMD  &kp RIGHT_ALT  &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
         layer_fn {
             bindings = <
-&kp F1  &kp F2    &kp F3    &kp F4    &kp F5         &kp F6      &tog 1                                      &mo 3   &kp F7   &kp F8             &kp F9               &kp F10              &kp F11  &kp F12
-&trans  &trans    &trans    &kp UP    &kp BACKSPACE  &kp DELETE  &none                                       &none   &trans   &trans             &trans               &trans               &trans   &trans
-&trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT      &kp END     &none   &trans  &trans      &trans  &trans  &none   &win_cw  &macro_windowleft  &macro_window_right  &macro_window_right  &trans   &trans
-&trans  &trans    &trans    &trans    &trans         &trans                      &trans      &trans                  &trans   &trans             &trans               &trans               &trans   &trans
-&trans  &trans    &trans    &trans    &trans                     &trans  &trans  &trans      &trans  &trans  &trans           &trans             &trans               &trans               &trans   &bl BL_OFF
+&kp F1  &kp F2    &kp F3    &kp F4    &kp F5         &kp F6      &tog 1                                      &mo 3   &kp F7         &kp F8         &kp F9         &kp F10        &kp F11  &kp F12
+&trans  &trans    &trans    &kp UP    &kp BACKSPACE  &kp DELETE  &none                                       &none   &trans         &trans         &trans         &trans         &trans   &trans
+&trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT      &kp END     &none   &trans  &trans      &trans  &trans  &none   &kp LS(LA(H))  &kp LS(LA(J))  &kp LS(LA(K))  &kp LA(LS(L))  &trans   &trans
+&trans  &trans    &trans    &trans    &trans         &trans                      &trans      &trans                  &trans         &trans         &trans         &trans         &trans   &trans
+&trans  &trans    &trans    &trans    &trans                     &trans  &trans  &trans      &trans  &trans  &trans                 &trans         &trans         &trans         &trans   &bl BL_OFF
             >;
         };
 
