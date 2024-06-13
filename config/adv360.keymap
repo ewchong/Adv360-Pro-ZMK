@@ -35,7 +35,11 @@
         shortcat: shortcat {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LCMD)>, <&macro_press>, <&kp SPACE>;
+            bindings =
+                <&macro_press>,
+                <&kp LS(LCMD)>,
+                <&macro_tap>,
+                <&kp SPACE>;
 
             label = "SHORTCAT";
         };
